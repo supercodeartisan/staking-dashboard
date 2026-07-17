@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 :root {
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --keyboard-offset: 0px;
   color-scheme: light;
   font-family:
     'Segoe UI',
@@ -32,6 +34,7 @@ body,
 
 body {
   margin: 0;
+  overscroll-behavior-y: none;
 }
 
 button,
@@ -39,6 +42,12 @@ input {
   font: inherit;
 }
 
+.keyboard-aware-sheet {
+  padding-bottom: calc(1rem + var(--safe-bottom) + var(--keyboard-offset));
+  transition: padding-bottom 120ms ease-out;
+}
+
 .action-dock {
-  bottom: env(safe-area-inset-bottom, 0px);
+  bottom: calc(var(--safe-bottom) + var(--keyboard-offset));
+  transition: bottom 120ms ease-out;
 }
