@@ -5,7 +5,6 @@ export type NetworkInfo = {
   shortName: string
 }
 
-// staking is only enabled on sepolia for now
 export const SUPPORTED_NETWORKS: NetworkInfo[] = [
   {
     chainId: 11155111,

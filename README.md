@@ -18,6 +18,8 @@ Mobile-first React app for MetaMask wallet connect and mock token staking.
 - Reward counter based on wall-clock time (no timer drift in background tabs)
 - Action buttons stay above the mobile keyboard
 
+
+
 ## Setup
 
 ```bash
@@ -29,6 +31,8 @@ Use a browser with MetaMask. Switch to **Sepolia** before staking.
 
 ## Technical notes
 
+
+
 ### Wallet events
 
 `WalletProvider` in `src/context/WalletContext.tsx` owns wallet state.
@@ -39,7 +43,7 @@ On mount it:
 2. Subscribes to `accountsChanged`, `chainChanged`, `connect`, `disconnect`
 3. Unsubscribes in the effect cleanup so listeners are not duplicated
 
-Flow: MetaMask event → context state → UI. Staking checks `isSupportedNetwork` and blocks actions when the chain is wrong.
+Flow: MetaMask event -> context state -> UI. Staking checks `isSupportedNetwork` and blocks actions when the chain is wrong.
 
 ### Reward counter
 
@@ -58,23 +62,31 @@ Approach:
 - `.action-dock` and `.keyboard-aware-sheet` use that offset
 - Amount input calls `scrollIntoView` on focus
 
+
+
 ## Quick MetaMask checks
 
 1. Install MetaMask (extension or in-app browser)
 2. Select Sepolia (`11155111`) or use **Switch to Sepolia**
 3. Connect and confirm the masked address
-4. Switch account → address updates without refresh
-5. Switch to Mainnet → banner shows, staking locked
-6. Stake → mining spinner → receipt → rewards increase
+4. Switch account -> address updates without refresh
+5. Switch to Mainnet -> banner shows, staking locked
+6. Stake mining spinner -> receipt -> rewards increase
+
+
 
 ## Scripts
 
-| Command           | Description        |
-| ----------------- | ------------------ |
-| `npm run dev`     | Dev server         |
-| `npm run build`   | Production build   |
-| `npm run preview` | Preview build      |
-| `npm run test`    | Reward math tests  |
+
+| Command           | Description       |
+| ----------------- | ----------------- |
+| `npm run dev`     | Dev server        |
+| `npm run build`   | Production build  |
+| `npm run preview` | Preview build     |
+| `npm run test`    | Reward math tests |
+
+
+
 
 ## Structure
 
@@ -86,3 +98,4 @@ src/
   lib/
   types/
 ```
+

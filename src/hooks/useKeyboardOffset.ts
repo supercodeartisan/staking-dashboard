@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 
-// lift fixed UI above the soft keyboard using visualViewport
 export function useKeyboardOffset(cssVarName = '--keyboard-offset'): void {
   useEffect(() => {
     const viewport = window.visualViewport

@@ -84,7 +84,6 @@ export function StakingProvider({ children }: { children: ReactNode }) {
   const [stakeError, setStakeError] = useState<string | null>(null)
   const pendingLock = useRef(false)
 
-  // reload balances when the wallet account changes
   useEffect(() => {
     if (!account || status !== 'connected') {
       const defaults = defaultBalances()
@@ -114,7 +113,6 @@ export function StakingProvider({ children }: { children: ReactNode }) {
     }
   }, [account, status])
 
-  // save on stake/unstake changes, not on every reward tick
   useEffect(() => {
     if (!account || status !== 'connected') return
     savePersisted({

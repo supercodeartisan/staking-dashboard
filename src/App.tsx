@@ -10,16 +10,17 @@ function Dashboard() {
   useKeyboardOffset()
 
   return (
-    <div className="min-h-dvh bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200">
+    <div className="min-h-dvh bg-slate-950 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.08),transparent_55%)]">
       <Header />
       <NetworkBanner />
-      <main className="keyboard-aware-sheet mx-auto flex max-w-lg flex-col gap-4 px-4 py-4">
-        <WalletStatusMessage />
-        <PortfolioSummary />
-        <StakePanel />
-        <p className="pb-2 text-center text-xs text-slate-500">
-          Mock balances only. State is saved per wallet in localStorage.
-        </p>
+      <main className="keyboard-aware-sheet mx-auto w-full max-w-5xl px-4 py-5 sm:py-8">
+        <div className="mb-4">
+          <WalletStatusMessage />
+        </div>
+        <div className="grid gap-4 lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-6">
+          <PortfolioSummary />
+          <StakePanel />
+        </div>
       </main>
       <TxReceiptModal />
     </div>

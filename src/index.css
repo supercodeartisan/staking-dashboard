@@ -3,7 +3,7 @@
 :root {
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --keyboard-offset: 0px;
-  color-scheme: light;
+  color-scheme: dark;
   font-family:
     'Segoe UI',
     system-ui,
@@ -11,8 +11,8 @@
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background: #f1f5f9;
+  color: #e2e8f0;
+  background: #020617;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -42,6 +42,16 @@ input {
   font: inherit;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .keyboard-aware-sheet {
   padding-bottom: calc(1rem + var(--safe-bottom) + var(--keyboard-offset));
   transition: padding-bottom 120ms ease-out;
@@ -50,4 +60,19 @@ input {
 .action-dock {
   bottom: calc(var(--safe-bottom) + var(--keyboard-offset));
   transition: bottom 120ms ease-out;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 220ms ease-out both;
 }

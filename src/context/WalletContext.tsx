@@ -124,7 +124,6 @@ export function WalletProvider({ children }: { children: ReactNode }) {
           ? Number((err as { code: number }).code)
           : null
 
-      // 4902 = chain not added to MetaMask yet
       if (code === 4902) {
         try {
           await provider.request({

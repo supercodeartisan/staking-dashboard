@@ -12,7 +12,6 @@ function randomHex(bytes: number): string {
   return Array.from(values, (b) => b.toString(16).padStart(2, '0')).join('')
 }
 
-// fake mining delay (~2s), no real contract call
 export async function simulateTransaction(
   action: 'stake' | 'unstake',
   amount: number,

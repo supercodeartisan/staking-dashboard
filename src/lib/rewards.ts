@@ -1,5 +1,4 @@
-// ~1.08% / day on staked amount
-export const REWARD_RATE_PER_SECOND = 0.0000125
+export const REWARD_RATE_PER_SECOND = 0.000000125
 
 export type AccrualSnapshot = {
   principal: number

@@ -4,7 +4,6 @@ import {
   type AccrualSnapshot,
 } from '../lib/rewards'
 
-// recompute from timestamps so background tab throttling doesn't drift the total
 export function useRewardCounter(snapshot: AccrualSnapshot | null): number {
   const [rewards, setRewards] = useState(() =>
     snapshot ? computeAccruedRewards(snapshot) : 0,
